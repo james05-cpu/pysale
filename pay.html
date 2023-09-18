@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta
+	name="viewport"
+	content="width=device-width,
+			initial-scale=1.0"/>
+	<style type="text/css">
+		
+		* {
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+}
+
+.container {
+	width: 100%;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.header {
+background: white;
+font-size: 20px;
+width: 350px;
+
+}
+
+.text{
+	text-align: left;
+margin-bottom: 20px;
+}
+.centre-content {
+width: 350px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+flex-wrap: wrap;
+}
+.centre-content p{
+	font-weight: 450;
+}
+
+
+.price {
+font-size: 20px;
+bottom: 15px;
+font-weight: 480;
+}
+
+.pay-now-btn {
+cursor: pointer;
+color: #fff;
+height: 50px;
+width: 100%;
+border-radius: 50px;
+border: none;
+font-size:23px;
+background-color: royalblue;
+}
+
+a{
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: #fff;
+height: 40px;
+width: 100%;
+border-radius: 50px;
+border: none;
+font-size:23px;
+background-color: skyblue;
+align-content: center;
+padding-top: 8px;
+font-weight: 450;
+
+}
+.card-details p{
+	margin: 20px 0 20px 0;
+}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div class="header">
+		<p class="text">
+			Welcome back to pysale marketing campaigns. 
+		We asist you increase your sales on a blink of eye. Almost free.
+	</p>
+	</div>
+
+	<div class="centre-content">
+		<h1 class="price">100<span>/- only</span></h1>
+		<p>
+		Pay now. To lauch your new ad online
+		</p>
+	
+
+	<div class="card-details">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="upload" value="1">
+<input type="hidden" name="business" value="jamesmuthiani981@gmail.com">
+<input type="hidden" name="item_name_1" value="Aggregated items">
+<input type="hidden" name="amount_1" value="1.00">
+<input type="hidden" name="'noyify_url'" value="https://pysale.co.ke/notify.php">
+<input type="hidden" name="'cancel_url'" value="https://pysale.co.ke/cancelled.php">
+
+<input type="hidden" name="'return'" value="https://pysale.co.ke/return.php">
+
+<button type="submit" class="pay-now-btn">
+		Pay with PayPal
+		</button>
+
+	<p>Exit without publishing ?. Your Ad Contents will be deleted</p>
+	<a href="del-ad.php">Exit Now</a>	
+	</form>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

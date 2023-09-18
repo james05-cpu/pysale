@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pySale | Upload</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+ border-radius: 5px;
+ border: 1px transparent;
+  padding: 16px;
+  background-color: white;
+  max-width: 500px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email],input[type=number], textarea{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border-radius: 5px;
+  border: none;
+  background: #f1f1f1;
+}
+file{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password],textarea, input[type=number], input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.add {
+  background-color: royalblue;
+  color: white;
+  padding: 10px 20px;
+  margin: 14px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.add:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.login {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+a:hover{
+  color: red;
+}
+textarea{
+  resize: vertical;
+}
+.output{
+height: 250px;
+width: 100%;
+}
+#top{
+  font-size: 18px;
+}
+
+
+</style>
+</head>
+<body>
+
+<form action="add.php" method="post" enctype="multipart/form-data" >
+  <center>
+  <div class="container">
+    <h1>pySale</h1>
+    <p id="top">New ads will reflect  with us immediately after completing transaction</p>
+    <hr>
+    <label for="category"><b>Product Category</b></label>
+ <input type="text" id="category" placeholder="category" name="category" required>
+    <label for="productname"><b>Product Name</b></label>
+    <input type="text" placeholder="Product name" name="productname" id="Product" required>
+ <label for="price"><b>Price</b></label>
+    <input type="number" placeholder="Enter price" name="price" id="price" min="1" required>
+    <label for="quad"><b>Quantity</b></label>
+    <input type="number" placeholder="Available stock" name="instock" id="instock" min="1" required>
+
+    <label for="des"><b>Description</b></label>
+    <textarea name="des" placeholder="Product description...." style="height: 150px;" required></textarea>
+    
+    <img id="output">
+    <button type="submit" class="add">Submit</button>
+  </div>
+  
+  <div class="container login">
+    <p></p>
+  
+  </div>
+  </center>
+</form>
+<script>
+  var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+output.classList.add('output')   
+ };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>
+</body>
+</html>

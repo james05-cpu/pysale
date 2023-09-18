@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <title>Website Accessibility Tester</title>
+    <style>
+      body{
+        margin: 3px;
+background: url("bgd1.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+      }
+      .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+                flex-wrap: wrap;
+
+      }
+      .card-body{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+                flex-wrap: wrap;
+                width: 100%;
+                align-items: center;
+
+      }
+     .input-group{
+         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 350px;
+      }
+    input, select{
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+                border-radius: 10px;
+                border: 1px solid grey;
+
+      }
+       input, select, textarea:focus{
+        outline: none;
+       }
+      button{
+
+        margin: 8px;
+         width: 100%;
+        font-size: 17px;
+        padding: 10px 0;
+        text-align: center;
+        background: royalblue;
+        border-radius: 50px;
+        color: white;
+        border:none;
+        cursor: pointer;
+      }
+      textarea{
+        border-radius: 10px;
+        width: 100%;
+        height: 80px;
+        resize: vertical;
+      }
+      @media only screen and (max-width: 370px) {
+ .input-group{
+        width: 100%;
+        margin-right: 3px;
+      }
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="header">Website Accessibility Tester</h2>
+
+        <div class="card-body">
+          <form id="form" action="web-tester.php" method="post">
+            <div class="input-group">
+              <p>Website url</p>
+              <input
+                type="url"
+                id="url"
+                class="form-control"
+                placeholder="Enter url"
+                name="url">
+                <p>Request method</p>
+              <select name="method" id="method">
+             <option value="GET">GET</option>
+              <option value="POST">POST</option>
+             <option value="DELETE">DELETE</option>
+              <option value="PUT">PUT</option>
+              </select>
+              <p>Json data (optional)</p>
+             <textarea name="data" rows="4" cols="50" placeholder=" eg. 'name' ='John Doe'&'submit' = '1'"></textarea>
+             <p>Require ssl?</p>
+             <select name="ssl" id="ssl">
+             <option value="false">NO</option>
+              <option value="true">YES</option>
+              </select>
+              <p>Connect time-out</p>
+               <input
+                type="text"
+                id="connect"
+                class="form-control"
+                placeholder="set connect time-out"
+                name="connect"
+              >
+              <p>Time-out</p>
+              <input
+                type="number"
+                id="time"
+                class="form-control"
+                placeholder="set time-out"
+                name="time">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+  </body>
+</html>

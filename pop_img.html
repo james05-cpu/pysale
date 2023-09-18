@@ -1,0 +1,35 @@
+
+<input type="file" accept="image/*" onchange="loadFile(event)">
+<input type="file" accept="image/*" onchange="loadFile1(event)">
+<input type="file" accept="image/*" onchange="loadFile2(event)">
+
+<img id="output"/>
+<img id="output1"/>
+<img id="output2"/>
+
+<script>
+  var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+   var loadFile1 = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output1');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+   var loadFile2 = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output2');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>

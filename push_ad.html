@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+<link rel="stylesheet" href="style.css">
+    <style>
+    .container1{
+    align-items:center;
+    width:270px
+    }
+.container1, .form1, .product-price{
+display:flex;
+flex-direction:column;
+}
+   input, textarea{
+    font-weight: 500;
+    margin:6px 0;
+}
+
+input[type="number"],input[type="number"]{
+    height:25px;
+}
+
+textarea{
+    resize: none;
+    padding: 10px 20px;
+}
+     .btn1{
+    padding: 10px 30px;
+    color: #fff;
+    background: #862d2d;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+    width:100%;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">pySale</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- NAVIGATION MENUS -->
+         <div class="menu">
+                 <li><a href="/home.php" >Home</a></li>
+            <li><a href="/products.php" id="product">Products</a></li>
+            <li><a href="/upload.php">Upload</a></li>
+            <li><a href="/profile.php">Profile</a></li>
+                        <li><a href="/logout.php">Logout</a></li>
+        </div>
+    </ul>
+</nav>
+
+<center>
+<div class="container1">
+<form action="add.php" method="post" enctype="multipart/form-data">
+    <div class="form1">
+                <input type="text" id="category" placeholder="category" name="category" required>
+
+        <input type="text" id="productname" placeholder="product name" name="productname" required>
+        <textarea id="des" placeholder="detail description" rows="8" cols="20" name="des" required></textarea>
+
+
+        <div class="product-price">
+            <input type="number" id="price" placeholder="actual price" name="price" required>
+            <input type="number" id="instock" min="1" placeholder="items in stocks (minimum 1)" name="instock" required>
+        </div>
+        <div class="buttons">
+            <input type="submit" class="btn1" id="add-btn" value="Next">
+        </div>
+    </div>
+</form>
+</div>
+
+</center>
+</body>
+</html>

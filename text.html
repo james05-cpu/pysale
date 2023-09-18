@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pySale | Text</title>
+<link rel="stylesheet" href="style.css">
+    <style>
+body{
+align-items:center;
+}
+.content{
+margin-top:100px;
+}
+.text-container{
+display:flex;
+flex-direction:column;
+}
+   input, textarea{
+    font-weight: 500;
+    margin:6px 0;
+font-size: 18px;
+}
+
+input[type="submit"]{
+    height:30px;
+width: 250px;
+  color: #fff;
+    background: #ff523b;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+textarea{
+    resize: none;
+    padding: 10px 20px;
+}
+    
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">pySale</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- NAVIGATION MENUS -->
+         <div class="menu">
+            <li><a href="/home.php">Home</a></li>
+            <li><a href="/upload.php">Upload</a></li>
+            <li><a href="/users.php">Products</a></li>
+            <li><a href="/profile.php">Profile</a></li>
+        </div>
+    </ul>
+</nav>
+<div class="content">
+<center>
+<div class="text-container">
+<div class="text-info"><p>
+Remember to enter some order information bellow<br>
+eg. Expected on... <u>date and time</u><br>
+    Expected at <u>place</u><br>
+    and much more
+</p></div>
+<form action="text.php" method="post">
+<div class="sms">
+<textarea rows="7" cols="20" name="sms"></textarea>
+</div>
+<div class="sub-btn">
+                        <input type="submit" name="submit" value="Submit">
+</div>
+</form>
+</div>
+</center>
+<
+</body>
+</html>
